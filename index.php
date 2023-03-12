@@ -1,7 +1,6 @@
 <?php 
 session_start ();
 if(!isset($_SESSION["login"]))
-
 	header("location:login.php"); 
 ?>
 
@@ -41,9 +40,7 @@ if(!isset($_SESSION["login"]))
       <div class="feature5"></div>
     </div>
   </div>
-  <footer>
-    <p>&copy; CustomSports Ltd. All rights reserved.</p>
-  </footer>
+  <?php include('pages/footer.php');?>
 </body>
 
 </html>

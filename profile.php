@@ -1,7 +1,7 @@
 <?php
 
 session_start ();
-include("connection.php"); 
+include("pages/connection.php"); 
 
 if(isset($_REQUEST['sub']))
 {
@@ -11,7 +11,8 @@ $b = $_REQUEST['password'];
 $query="SELECT * FROM users WHERE uname='$a' AND upassword='$b'";
 $res = $PDO->prepare($query);
 $res->execute();
-if($res)
+$result=$res->fetch($PDO::FETCH_ASSOC);
+if($result)
 {
 	
 	$_SESSION["login"]="1";
